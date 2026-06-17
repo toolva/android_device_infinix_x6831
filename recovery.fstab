@@ -1,0 +1,9 @@
+system                  /system         ext4    ro                              wait,slotselect,avb=vbmeta_system,logical,first_stage_mount
+system_ext              /system_ext     ext4    ro                              wait,slotselect,avb=vbmeta_system,logical,first_stage_mount
+vendor                  /vendor         ext4    ro                              wait,slotselect,avb=vbmeta_vendor,logical,first_stage_mount
+product                 /product        ext4    ro                              wait,slotselect,avb=vbmeta_system,logical,first_stage_mount
+/dev/block/by-name/boot_a   /boot       emmc    defaults                        defaults
+/dev/block/by-name/boot_b   /boot       emmc    defaults                        defaults
+/dev/block/by-name/userdata /data       f2fs    noatime,nosuid,nodev            wait,check,fileencryption=aes-256-xts:aes-256-cts:v1,metadata_encryption=aes-256-xts,latemount,formattable
+/dev/block/by-name/userdata /data       ext4    noatime,nosuid,nodev            wait,check,formattable
+/dev/block/by-name/metadata /metadata   ext4    noatime,nosuid,nodev            wait,formattable
