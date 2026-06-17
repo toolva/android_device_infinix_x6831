@@ -111,7 +111,6 @@ TW_EXCLUDE_AAPT := true
 TW_OZIP_DECRYPT_KEY :=
 BOARD_HAS_NO_REAL_SDCARD := true
 RECOVERY_SDCARD_ON_DATA := true
-TW_USE_COMPRESSION := true
 
 # NO Magisk in recovery (saves ~3-5MB)
 TW_EXCLUDE_MAGISK := true
@@ -119,3 +118,13 @@ TW_NO_MAGISK_BOOT := true
 
 # Fix partition size to actual 32MB
 BOARD_BOOTIMAGE_PARTITION_SIZE_REAL := 33554432
+
+# FORCE ramdisk compression (saves ~5-8MB!)
+RECOVERY_RAMDISK_COMPRESSOR := gzip
+BOARD_RAMDISK_USE_LZMA := true
+LZMA_RAMDISK := true
+
+# More aggressive exclusions
+TW_EXCLUDE_LPTOOLS := true
+TW_EXCLUDE_LPDUMP := true
+TW_NO_BINDER := true
